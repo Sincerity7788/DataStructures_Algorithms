@@ -8,4 +8,19 @@
 <body>
 
 </body>
+<script>
+  const list = new ListClass();
+  list.append(1);
+  list.append(2);
+  list.append(3);
+  list.append(4);
+  list.append(5);
+  console.log(list.toString())
+  list.inset(7, 3)
+  console.log(list.toString())
+  console.log(list.findIndex(7))
+  list.remove(7);
+  console.log(list.toString())
+  console.log(list.length())
+</script>
 </html>
