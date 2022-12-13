@@ -10,17 +10,36 @@
 </body>
 <script>
   const list = new ListClass();
-  list.append(1);
-  list.append(2);
-  list.append(3);
-  list.append(4);
-  list.append(5);
+  list.append('1、第一件事...');
+  list.append('2、第二件事...');
+  list.append('3、第三件事...');
+  list.append('4、第四件事...');
+  list.append('5、第五件事...');
+  list.inset('2.1、我是插队的任务...', '2、第二件事...');
+  list.remove('1、第一件事...');
+  list.remove('2、第二件事...');
+  list.remove('2.1、我是插队的任务...');
   console.log(list.toString())
-  list.inset(7, 3)
-  console.log(list.toString())
-  console.log(list.findIndex(7))
-  list.remove(7);
-  console.log(list.toString())
-  console.log(list.length())
+  // const factorial = n1 => {
+  //   if( n1 === 1 ){
+  //     return n1;
+  //   }
+  //   return n1 * factorial(--n1)
+  // }
+  // console.log(factorial(5))
+
+  const factorial = n1 => {
+    const list = new ListClass();
+    let res = n1;
+    while (--n1 ){
+      list.append(n1);
+    }
+    while (list.hasNext()){
+      res *= list.getElement();
+      list.next();
+    }
+    return res;
+  }
+  console.log(factorial(5))
 </script>
 </html>
