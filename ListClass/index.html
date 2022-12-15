@@ -11,35 +11,46 @@
 <script>
   const list = new ListClass();
   list.append('1、第一件事...');
-  list.append('2、第二件事...');
   list.append('3、第三件事...');
-  list.append('4、第四件事...');
+  list.append('2、第二件事...');
   list.append('5、第五件事...');
-  list.inset('2.1、我是插队的任务...', '2、第二件事...');
-  list.remove('1、第一件事...');
-  list.remove('2、第二件事...');
-  list.remove('2.1、我是插队的任务...');
-  console.log(list.toString())
-  // const factorial = n1 => {
-  //   if( n1 === 1 ){
-  //     return n1;
-  //   }
-  //   return n1 * factorial(--n1)
-  // }
-  // console.log(factorial(5))
+  list.append('4、第四件事...');
 
-  const factorial = n1 => {
-    const list = new ListClass();
-    let res = n1;
-    while (--n1 ){
-      list.append(n1);
+  console.log(list.toString()); // 1、第一件事...,3、第三件事...,2、第二件事...,5、第五件事...,4、第四件事...
+
+  const sort = (list, lifting) => {
+    // 定义临时存储
+    let item;
+    list = list.list
+    // 将列表都循环一次
+    for( let i = 0, len = list.length; i < len;i++ ){
+      // 每次将外层循环都元素与其他元素进行对比，确定下应该放置都位置
+      for( let j = i, len = list.length; j < len;j++ ){
+        // 判断是升序还是降序
+        if( lifting === 1 ){
+          if( list[i] > list[j] ){
+            item = list[j];
+            list[j] = list[i];
+            list[i] = item;
+          }
+        }else{
+          if( list[i] < list[j] ){
+            item = list[j];
+            list[j] = list[i];
+            list[i] = item;
+          }
+        }
+      }
     }
-    while (list.hasNext()){
-      res *= list.getElement();
-      list.next();
-    }
-    return res;
   }
-  console.log(factorial(5))
+
+  sort(list, 1)
+  console.log(list.toString());// 1、第一件事...,2、第二件事...,3、第三件事...,4、第四件事...,5、第五件事...
+  sort(list, -1)
+  console.log(list.toString());// 5、第五件事...,4、第四件事...,3、第三件事...,2、第二件事...,1、第一件事...
+
+
+
+
 </script>
 </html>
