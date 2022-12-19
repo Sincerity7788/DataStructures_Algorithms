@@ -13,7 +13,7 @@
 
 > 工作清单转换成一堆数据以及最后在列表中的展现方式
 
-![img.png](img.png)
+![img.png](images/img.png)
 
 #### 1、列表的抽象数据类型定义
 
@@ -43,7 +43,7 @@
 
 > 2.1、语言
 
-使用 JavaScript 来编写列表类，虽然说已经内置了一个 Array，我们可以原生实现一个。
+使用 JavaScript 来编写列表类，虽然说已经内置了一个 Array，我们可以模拟实现一个。
 
 > 2.2、创建文件
 
@@ -149,7 +149,7 @@ length = () => this.listSize;
 
 clear 方法是清空整个列表的方法，只要调用就会把列表置为初始状态，或者说是删除所有数据。
 
-![img_1.png](img_1.png)
+![img_1.png](images/img_1.png)
 
 参数：无
 
@@ -169,7 +169,7 @@ clear = () => {
 
 toString 方法是将当前列表中所有元素都转成字符串用逗号拼接都方式返回。
 
-![img_2.png](img_2.png)
+![img_2.png](images/img_2.png)
 
 参数：无
 
@@ -195,7 +195,7 @@ toString = () => {
 
 getElement 方法是获取当位置在列表中的元素，我们在类中定义了 pos 属性来记录当前位置
 
-![img_3.png](img_3.png)
+![img_3.png](images/img_3.png)
 
 参数：无
 
@@ -213,7 +213,7 @@ inset 方法是将一个元素插入到指定元素到后面，目前实现的�
 + 2、没有找到指定元素，就在列表到尾部新增一个
 + 3、任意以上到操作都需要更新一下当前 listSize 都数量
 
-![img_4.png](img_4.png)
+![img_4.png](images/img_4.png)
 
 参数：
 + 需要插入的元素 element
@@ -253,7 +253,7 @@ inset = (element, after) => {
 
 findIndex 方法是查找指定元素在列表中的位置，如果找不到就返回 -1
 
-![img_5.png](img_5.png)
+![img_5.png](images/img_5.png)
 
 参数：需要查找到元素 element
 
@@ -277,7 +277,7 @@ findIndex = (element) => {
 
 find 方式是用于查找指定元素是否在列表中
 
-![img_6.png](img_6.png)
+![img_6.png](images/img_6.png)
 
 参数： 无
 
@@ -301,7 +301,7 @@ find = (element) => {
 
 append 方法是在列表的尾部添加元素，然后更新 listSize 的长度
 
-![img_7.png](img_7.png)
+![img_7.png](images/img_7.png)
 
 参数：需要添加的元素 element
 
@@ -317,7 +317,7 @@ append = (element) => this.list[this.listSize++] = element;
 remove 方法是在列表中删除指定元素，删除第一个出现的元素，如果出现重复元素的时候，
 优先匹配第一个出现的元素，并且删除。
 
-![img_8.png](img_8.png)
+![img_8.png](images/img_8.png)
 
 参数：需要删除的元素 element
 
