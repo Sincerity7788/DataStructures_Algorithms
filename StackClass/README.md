@@ -225,7 +225,7 @@ toString = () => {
   // 定义返回值
   let res = '';
   // 循环获取容器内的数据
-  for (let i = 0; i < this.dataStore; i++) {
+  for (let i = 0; i < this.top; i++) {
     res += this.dataStore[i];
     res += i === this.top - 1 ? '' : ','
   }

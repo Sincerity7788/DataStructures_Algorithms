@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>学习数据结构之队列</title>
+  <script src="./JavaScript/QueueClass.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+  // 实例化
+  const queue = new QueueClass();
+
+  // 添加数据
+  queue.enqueue(1);
+  queue.enqueue(2);
+  queue.enqueue(3);
+  queue.enqueue(4);
+  queue.enqueue(5);
+
+  console.log(queue.toString());// 1,2,3,4,5
+
+  // 删除数据
+  queue.dequeue();
+  queue.dequeue();
+  queue.dequeue();
+
+  console.log(queue.toString());// 4,5
+  console.log(queue.empty());// false
+
+  queue.dequeue();
+  queue.dequeue();
+  console.log(queue.empty());// true
+
+  queue.enqueue(3);
+  queue.enqueue(4);
+  queue.enqueue(5);
+
+  console.log(queue.front());// 3
+  console.log(queue.back());// 5
+</script>
+</html>
